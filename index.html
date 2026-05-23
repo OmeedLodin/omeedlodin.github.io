@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<!-- saved from url=(0211)https://mrducks-mr-not-ducks-osdr-cdedbd-wings-mrducks.zorilla-climb.ts.net/r/eyJuYW1lIjoib21lZWQiLCJuIjoiYWIwYTMzMjBjZGI0YmVhZiIsIm5iZiI6MTc3OTUwNDI3NywiZXhwIjoxNzc5NTQ3NDc3fQ.ahEUWQ.fIEcVP6i67a4XlM1qh_Dix8xmVM -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Omeed Lodin — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Omeed Lodin — Resume_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f3eee3;
+    --paper-deep: #ebe4d4;
+    --ink: #15161c;
+    --ink-soft: #2a2c38;
+    --muted: #6b6859;
+    --rule: #d8cfbb;
+    --accent: #c64a2a;
+    --accent-soft: #e89072;
+    --gold: #b88a3e;
+    --sage: #5c6b58;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', sans-serif;
+    font-size: 10.5px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 850px;
+    margin: 32px auto;
+    background: var(--paper);
+    padding: 44px 52px 52px;
+    position: relative;
+    box-shadow: 0 30px 60px -30px rgba(21,22,28,0.25), 0 0 0 1px rgba(21,22,28,0.04);
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(198, 74, 42, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(92, 107, 88, 0.05) 0%, transparent 50%);
+  }
+
+  /* ============= DECORATIVE GRAIN ============= */
+  .page::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(21,22,28,0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* ============= HEADER ============= */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 22px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .header-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-mark::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .name .accent-letter {
+    color: var(--ink);
+    font-style: normal;
+  }
+
+  .tagline {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+
+  /* BUZZ STRIP */
+  .buzz-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    align-items: center;
+  }
+  .buzz-stamp {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    padding: 5px 9px 4px;
+    background: var(--accent);
+    color: var(--paper);
+    border-radius: 2px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: rotate(-1.5deg);
+    position: relative;
+    transform-origin: center;
+  }
+  .buzz-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 4px 8px;
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .buzz-tag:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .contact {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+  }
+  .contact a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .contact a:hover { color: var(--accent); border-color: var(--accent); }
+  .contact-item { display: flex; justify-content: flex-end; align-items: center; gap: 8px; }
+  .contact-item .dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+
+  /* Tiny orbital decoration */
+  .orbit {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    opacity: 0.6;
+  }
+
+  /* ============= SUMMARY BAND ============= */
+  .summary {
+    font-family: 'Instrument Serif', serif;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    max-width: 92%;
+    position: relative;
+    padding-left: 18px;
+  }
+  .summary::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 3px;
+    background: var(--accent);
+  }
+  .summary em { color: var(--accent); font-style: normal; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* ============= STAT INFOGRAPHIC ============= */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-bottom: 32px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 18px 0;
+    position: relative;
+  }
+  .stat {
+    text-align: center;
+    padding: 0 12px;
+    border-right: 1px dashed var(--rule);
+    position: relative;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 38px;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 4px;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .stat-num .sym {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--accent);
+    margin-left: 2px;
+    font-weight: 500;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ============= LAYOUT ============= */
+  .grid {
+    display: grid;
+    grid-template-columns: 1.85fr 1fr;
+    gap: 36px;
+  }
+
+  /* ============= SECTIONS ============= */
+  .section { margin-bottom: 26px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .section-title .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .section-title h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .section-title .line {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  /* ============= EXPERIENCE ============= */
+  .job {
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 1px solid var(--rule);
+    position: relative;
+  }
+  .job::before {
+    content: '';
+    position: absolute;
+    left: -4px; top: 6px;
+    width: 7px; height: 7px;
+    background: var(--paper);
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+  }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 2px;
+  }
+  .job-role {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .job-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .job-company {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .job-locale {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .job ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .job li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 4px;
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .job li::before {
+    content: '+';
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+  }
+  .job li strong {
+    color: var(--ink);
+    background: linear-gradient(180deg, transparent 60%, rgba(198,74,42,0.18) 60%);
+    padding: 0 1px;
+    font-weight: 600;
+  }
+
+  /* ============= PROJECTS ============= */
+  .project {
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    background: rgba(21,22,28,0.025);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 2px 2px 0;
+  }
+  .project-name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 11.5px;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .project-name .stack {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 8.5px;
+    color: var(--gold);
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+  }
+  .project p {
+    font-size: 10px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ============= SIDEBAR ============= */
+  .sidebar .section { margin-bottom: 24px; }
+
+  /* SKILL BARS */
+  .skill-group { margin-bottom: 14px; }
+  .skill-group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .skill-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 28px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .skill-name {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .skill-bar {
+    height: 4px;
+    background: var(--paper-deep);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 100%);
+    border-radius: 2px;
+    position: relative;
+  }
+  .skill-fill::after {
+    content: '';
+    position: absolute;
+    right: -2px; top: -2px;
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border: 1.5px solid var(--paper);
+    border-radius: 50%;
+  }
+  .skill-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* TAG CLOUD */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    padding: 3px 7px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .tag.primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  /* EDUCATION */
+  .edu-card {
+    padding: 14px;
+    border: 1px solid var(--ink);
+    position: relative;
+    background: var(--paper-deep);
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    border: 1px dashed var(--rule);
+    pointer-events: none;
+  }
+  .edu-school {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .edu-degree {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .edu-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .edu-highlights {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+  }
+  .edu-highlights li {
+    font-size: 9.5px;
+    line-height: 1.45;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+    color: var(--ink-soft);
+  }
+  .edu-highlights li::before {
+    content: '★';
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--gold);
+    font-size: 8px;
+  }
+  .edu-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2px 6px;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  /* CIRCULAR STAT */
+  .circular-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+    margin: 12px 0;
+  }
+  .ring {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+  .ring-text {
+    font-size: 9.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .ring-text b { color: var(--ink); display: block; margin-bottom: 2px; font-size: 10.5px; }
+
+  /* LEADERSHIP */
+  .lead-item {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .lead-item:last-child { border-bottom: none; }
+  .lead-title {
+    font-weight: 700;
+    font-size: 10.5px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lead-title::before {
+    content: '◆';
+    color: var(--accent);
+    font-size: 8px;
+  }
+  .lead-desc {
+    font-size: 9.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .sig-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .sig-physics {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+  .sig-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ============= PRINT ============= */
+  @media print {
+    body { background: white; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      max-width: 100%;
+      padding: 20px 24px;
+    }
+    @page { size: letter; margin: 0.4in; }
+  }
+
+  @media (max-width: 700px) {
+    .page { padding: 24px; margin: 12px; }
+    .name { font-size: 44px; }
+    .header { grid-template-columns: 1fr; }
+    .contact { text-align: left; }
+    .contact-item { justify-content: flex-start; }
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 12px 0; }
+    .stat { border-right: none; border-bottom: 1px dashed var(--rule); padding-bottom: 12px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1295.0" data-gr-ext-installed="">
+<div class="page">
+
+  <!-- Decorative orbital with physics easter egg -->
+  <svg class="orbit" viewBox="0 0 60 60" fill="none">
+    <ellipse cx="30" cy="30" rx="28" ry="10" stroke="#c64a2a" stroke-width="0.5" stroke-dasharray="2 3" transform="rotate(-25 30 30)"></ellipse>
+    <ellipse cx="30" cy="30" rx="20" ry="20" stroke="#15161c" stroke-width="0.5" stroke-dasharray="1 2"></ellipse>
+    <circle cx="30" cy="30" r="3" fill="#c64a2a"></circle>
+    <text x="55" y="25" font-family="&#39;Instrument Serif&#39;, serif" font-style="italic" font-size="7" fill="#15161c">Φ</text>
+    <text x="6" y="40" font-family="&#39;Instrument Serif&#39;, serif" font-style="italic" font-size="6" fill="#b88a3e">ℓ</text>
+    <text x="32" y="58" font-family="&#39;Instrument Serif&#39;, serif" font-style="italic" font-size="5" fill="#15161c">∂</text>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="header-mark">Curriculum Vitae · Toronto, ON · 2026</div>
+      <h1 class="name">Omeed Lodin</h1>
+      <p class="tagline">Physics &amp; Astronomy student · Data, automation, and structured problem solving</p>
+      <div class="buzz-strip">
+        <span class="buzz-stamp">GOT&nbsp;STACK!</span>
+        <span class="buzz-tag">⚡ Agentic Systems Architect</span>
+        <span class="buzz-tag">◆ Multi-Modal Bot Builder</span>
+        <span class="buzz-tag">▲ Strict TDD-Compliant</span>
+        <span class="buzz-tag">↯ API Collector</span>
+        <span class="buzz-tag">∞ MCP Trainer</span>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="contact-item"><span>289 · 600 · 4349</span><span class="dot"></span></div>
+      <div class="contact-item"><a href="mailto:omeed.lodin@live.com">omeed.lodin@live.com</a><span class="dot"></span></div>
+      <div class="contact-item"><a href="https://www.linkedin.com/in/omeed-lodin">linkedin.com/in/omeed-lodin</a><span class="dot"></span></div>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    <em>Profile —</em> Analytical Physics &amp; Astronomy student with experience in technical troubleshooting, workflow optimization, and data-driven problem solving. Skilled in Python, SQL, and structured data analysis, with a track record of supporting client systems, improving operational workflows, and translating business requirements into scalable technical solutions.
+  </p>
+
+  <!-- STAT INFOGRAPHIC -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">50<span class="sym">%+</span></div>
+      <div class="stat-label">Pipeline target<br>exceeded</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40<span class="sym">%+</span></div>
+      <div class="stat-label">Reporting time<br>reduced</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">150<span class="sym">+</span></div>
+      <div class="stat-label">Client systems<br>diagnosed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">25<span class="sym">/day</span></div>
+      <div class="stat-label">B2B orders<br>vs. 10 team avg</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">96<span class="sym">%</span></div>
+      <div class="stat-label">University entrance<br>average</div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="grid">
+
+    <!-- LEFT COLUMN -->
+    <main>
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>Experience</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="job-role">Business Development Manager</span>
+            <span class="job-date">May 2025 → Present</span>
+          </div>
+          <div class="job-company">Loopr Marketing</div>
+          <div class="job-locale">Video Games Industry · Toronto / Montreal</div>
+          <ul>
+            <li>Built and maintained SQL-based tracking workflows for <strong>15+ weekly leads against a 10-lead target</strong>, exceeding pipeline goals by 50%+.</li>
+            <li>Developed Python scripts to automate data cleaning, formatting, and campaign reporting, <strong>reducing manual reporting time by 40%+</strong>.</li>
+            <li>Standardized <strong>3 core reporting workflows</strong> across lead tracking, campaign performance, and outreach follow-ups.</li>
+            <li>Collaborated with stakeholders across Canadian and U.S. markets to translate business requirements into structured tracking systems.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="job-role">Sales Representative</span>
+            <span class="job-date">Aug 2023 → May 2025</span>
+          </div>
+          <div class="job-company">ASR Building Supplies</div>
+          <div class="job-locale">Construction Supply · Mississauga</div>
+          <ul>
+            <li>Processed and tracked <strong>25+ daily B2B client orders against a 10-order team average</strong>, maintaining accuracy across records, specs, and operational systems.</li>
+            <li>Identified recurring purchasing patterns across contractor accounts, <strong>reducing product selection time by 30%+</strong>.</li>
+            <li>Translated project requirements into accurate product selections while navigating inventory constraints to support execution timelines.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="job-role">IT Support Specialist</span>
+            <span class="job-date">Jun 2022 → Aug 2023</span>
+          </div>
+          <div class="job-company">KlueTek</div>
+          <div class="job-locale">Individual &amp; Corporate IT Solutions · Toronto</div>
+          <ul>
+            <li>Diagnosed and resolved technical issues across <strong>150+ client systems</strong>, identifying root causes in software, hardware, and network environments.</li>
+            <li>Configured and deployed IT systems for <strong>20+ client projects</strong>, including device setup, network config, and software installation.</li>
+            <li>Automated repetitive troubleshooting and setup tasks via scripts, <strong>improving daily issue resolution capacity by 50%+</strong>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>Selected Projects</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="project">
+          <div class="project-name">Data Processing &amp; Validation Tool<span class="stack">// Python</span></div>
+          <p>Modular Python tool that ingests, cleans, validates, and exports raw datasets into structured CSV/JSON outputs. Built parsing, validation, and error-handling layers; full unit-test coverage for edge cases and input variants.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-name">Galactic Data Analysis Pipeline · PGC-70419<span class="stack">// Python · DS9 · IRAF</span></div>
+          <p>Processed large observational astronomy datasets with Python, DS9, and IRAF. Applied validation checks and statistical methods to surface meaningful patterns; documented full methodology in a reproducibility-focused technical report.</p>
+        </div>
+
+        <div class="project">
+          <div class="project-name">Experimental Physics Analysis<span class="stack">// Scientific Computing · Technical Reporting</span></div>
+          <p>Designed and documented analytical workflows for multiple experimental physics investigations involving data acquisition, uncertainty analysis, curve fitting, statistical validation, and reproducible technical reporting. Applied structured problem solving to interpret laboratory and observational datasets while communicating findings through publication-style reports.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>Education</h2>
+          <div class="line"></div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-school">York University</div>
+          <div class="edu-degree">B.Sc., Specialized Honours</div>
+          <div class="edu-degree" style="color:var(--ink-soft); font-weight:500;">Physics &amp; Astronomy</div>
+          <div class="edu-date">Sept 2022 — Expected Jan 2027</div>
+          <span class="edu-badge">Ontario Scholar</span>
+          <ul class="edu-highlights">
+            <li>96% entrance average upon admission</li>
+            <li>Top 10 of 150 — Physics Experiment Poster Challenge</li>
+            <li>Coursework: Calc I–V, Linear Algebra, Stats, Computational Methods, Data Analysis</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>Core Stack</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="skill-row">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+            <span class="skill-pct">92</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">SQL</span>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            <span class="skill-pct">85</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+            <span class="skill-pct">75</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">C / C++</span>
+            <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            <span class="skill-pct">70</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+            <span class="skill-pct">65</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Tools &amp; Tech</div>
+          <div class="tags">
+            <span class="tag primary">Git</span>
+            <span class="tag primary">GitHub</span>
+            <span class="tag">Linux</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Docker</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Data &amp; Engineering</div>
+          <div class="tags">
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Statistical Analysis</span>
+            <span class="tag">Data Modelling</span>
+            <span class="tag">Pipelines</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Visualization</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Algorithms</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKFLOW IMPACT RING -->
+      <div class="circular-stat">
+        <svg class="ring" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="24" stroke="#ebe4d4" stroke-width="5" fill="none"></circle>
+          <circle cx="28" cy="28" r="24" stroke="#c64a2a" stroke-width="5" fill="none" stroke-dasharray="150.8" stroke-dashoffset="22.6" transform="rotate(-90 28 28)" stroke-linecap="round"></circle>
+          <text x="28" y="32" text-anchor="middle" font-family="Instrument Serif, serif" font-size="14" fill="#15161c">85%</text>
+        </svg>
+        <div class="ring-text">
+          <b>Workflow automation impact</b>
+          Across roles, automation work has consistently lifted throughput, accuracy, and reporting speed.
+        </div>
+      </div>
+
+      <!-- LEADERSHIP -->
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>Leadership</h2>
+          <div class="line"></div>
+        </div>
+        <div class="lead-item">
+          <div class="lead-title">Computer Science Club — Co-Founder</div>
+          <div class="lead-desc">Co-founded a student-led programming initiative focused on problem solving, collaboration, and technical skill development. Facilitated peer learning through discussions and collaborative coding sessions.</div>
+        </div>
+        <div class="lead-item">
+          <div class="lead-title">Physics Experiment Poster Challenge</div>
+          <div class="lead-desc">Ranked Top 10 of 150 students for presenting analytical research findings and translating technical concepts to a general audience.</div>
+        </div>
+      </section>
+
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="sig-block">
+      <span class="sig-physics">⊙mεεd ℓ⊙∂ιη</span>
+      <span class="sig-caption">// signed in natural units, 2026</span>
+    </div>
+    <span>Available on request — references &amp; project samples</span>
+  </footer>
+
+</div>
+
+<style>
+  .arctos-pdf-bar {
+    position: fixed; top: 14px; right: 14px; z-index: 9999;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .arctos-pdf-bar a {
+    display: inline-block; padding: 0.65rem 1.2rem;
+    background: #1a1a1a; color: #f4efe6; text-decoration: none;
+    border-radius: 999px; font-size: 0.92rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+  }
+  .arctos-pdf-bar a:hover { opacity: 0.92; }
+  @media print { .arctos-pdf-bar { display: none; } }
+</style>
+<div class="arctos-pdf-bar">
+  <a href="https://mrducks-mr-not-ducks-osdr-cdedbd-wings-mrducks.zorilla-climb.ts.net/r/eyJuYW1lIjoib21lZWQiLCJuIjoiYWIwYTMzMjBjZGI0YmVhZiIsIm5iZiI6MTc3OTUwNDI3NywiZXhwIjoxNzc5NTQ3NDc3fQ.ahEUWQ.fIEcVP6i67a4XlM1qh_Dix8xmVM/pdf" download="">↓ Download PDF</a>
+</div>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
