@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omeed Lodin — Physics &amp; Astronomy</title>
+<meta name="description" content="Omeed Lodin, Physics & Astronomy at York University. Hands-on hardware, lab and test experience for nuclear operations, space hardware, quantum and photonics labs, and data work.">
+<meta property="og:title" content="Omeed Lodin — Physics & Astronomy">
+<meta property="og:description" content="Hands-on hardware, lab and test experience. Pick your field to see what's relevant.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omeedlodin.github.io/">
+<meta name="theme-color" content="#0e1821">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230e1821'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f5b041' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%234ade80'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --console: #0e1821;
+    --console-deep: #0a1219;
+    --panel: #132130;
+    --panel-hi: #182a3b;
+    --rule: #25394c;
+    --rule-hi: #36506a;
+    --ink: #e8eef3;
+    --ink-2: #c3d0db;
+    --dim: #93a7b8;
+    --amber: #f5b041;
+    --amber-soft: rgba(245, 176, 65, 0.12);
+    --go: #4ade80;
+    --link: #8ad4f2;
+
+    --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --cond: 'IBM Plex Sans Condensed', 'IBM Plex Sans', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --wrap: 1180px;
+    --gutter: clamp(16px, 4vw, 40px);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--console);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+  .skip {
+    position: absolute; left: -9999px; top: 8px;
+    background: var(--amber); color: var(--console); padding: 8px 12px; z-index: 100;
+    font-weight: 600; text-decoration: none;
+  }
+  .skip:focus { left: 8px; }
+
+  /* ---------- Console bar ---------- */
+  .bar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 18, 25, 0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar .wrap {
+    display: flex; align-items: center; gap: 24px;
+    height: 56px;
+  }
+  .callsign {
+    font-family: var(--cond); font-weight: 700; font-size: 17px;
+    color: var(--ink); text-decoration: none; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 10px; white-space: nowrap;
+  }
+  .lamp {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--go); box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.16);
+    flex: none;
+  }
+  .met {
+    font-family: var(--mono); font-size: 13px; color: var(--dim);
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .met b { color: var(--amber); font-weight: 500; }
+  .nav { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+  .nav a {
+    font-family: var(--cond); font-weight: 500; font-size: 15px;
+    color: var(--ink-2); text-decoration: none;
+    padding: 6px 10px; border-radius: 3px;
+  }
+  .nav a:hover { color: var(--ink); background: var(--panel); }
+  .nav a.pdf {
+    color: var(--console); background: var(--amber); font-weight: 600; margin-left: 8px;
+  }
+  .nav a.pdf:hover { background: #ffc566; }
+
+  /* ---------- Section frame ---------- */
+  section { padding: 72px 0; border-top: 1px solid var(--rule); }
+  .head {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .plate {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    color: var(--amber);
+    border: 1px solid rgba(245, 176, 65, 0.45);
+    padding: 2px 8px; border-radius: 2px;
+    letter-spacing: 0.06em;
+    position: relative; top: -3px;
+  }
+  h2 {
+    font-family: var(--cond); font-weight: 600;
+    font-size: clamp(28px, 3.4vw, 38px); line-height: 1.1;
+    margin: 0; letter-spacing: -0.005em;
+  }
+  .head p { flex-basis: 100%; margin: 6px 0 0; color: var(--dim); max-width: 62ch; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 56px 0 72px; border-top: 0; position: relative; overflow: hidden; }
+  .hero::before {
+    /* plotting grid, like a trajectory display */
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--rule) 1px, transparent 1px),
+      linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.28;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+    pointer-events: none;
+  }
+  .hero .wrap {
+    position: relative;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(28px, 5vw, 64px); align-items: start;
+  }
+  .name {
+    font-family: var(--cond); font-weight: 700;
+    font-size: clamp(56px, 8.4vw, 112px); line-height: 0.92;
+    letter-spacing: -0.02em; margin: 8px 0 22px;
+  }
+  .name span { display: block; }
+  .name span + span { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+  .role {
+    font-family: var(--cond); font-weight: 500; font-size: 22px; line-height: 1.35;
+    color: var(--ink); margin: 0 0 18px; max-width: 30ch;
+  }
+  .lede { color: var(--ink-2); margin: 0 0 24px; max-width: 54ch; }
+  .status {
+    display: grid; gap: 8px; margin: 0 0 28px; padding: 0; list-style: none;
+    font-size: 15px; color: var(--ink-2);
+  }
+  .status li { display: flex; gap: 10px; align-items: baseline; }
+  .status .k {
+    font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+    min-width: 84px; flex: none;
+  }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--cond); font-weight: 600; font-size: 16px;
+    padding: 10px 16px; border-radius: 3px; text-decoration: none;
+    border: 1px solid var(--rule-hi); color: var(--ink); background: var(--panel);
+  }
+  .btn:hover { border-color: var(--amber); color: var(--ink); }
+  .btn.primary { background: var(--amber); border-color: var(--amber); color: var(--console); }
+  .btn.primary:hover { background: #ffc566; color: var(--console); }
+
+  /* ---------- Poll panel ---------- */
+  .poll {
+    background: var(--console-deep);
+    border: 1px solid var(--rule-hi);
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  .poll-top {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 12px 18px; border-bottom: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+  }
+  .poll-top .live { display: flex; align-items: center; gap: 8px; }
+  .poll-body { padding: 20px 18px 18px; }
+  .poll h3 {
+    font-family: var(--cond); font-weight: 600; font-size: 24px; line-height: 1.2;
+    margin: 0 0 4px;
+  }
+  .poll .hint { margin: 0 0 16px; color: var(--dim); font-size: 15px; }
+  .tracks { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .track {
+    font-family: var(--cond); font-weight: 500; font-size: 15.5px;
+    color: var(--ink-2); background: var(--panel);
+    border: 1px solid var(--rule-hi); border-radius: 3px;
+    padding: 8px 12px; cursor: pointer;
+  }
+  .track:hover { color: var(--ink); border-color: var(--dim); }
+  .track[aria-pressed="true"] {
+    color: var(--console); background: var(--amber); border-color: var(--amber);
+  }
+  .readout { border-top: 1px dashed var(--rule-hi); padding-top: 14px; min-height: 236px; }
+  .readout-title {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .readout-title strong { font-family: var(--cond); font-weight: 600; font-size: 18px; }
+  .readout-title span { font-family: var(--mono); font-size: 12.5px; color: var(--dim); white-space: nowrap; }
+  .lines { list-style: none; margin: 0; padding: 0; }
+  .lines li {
+    display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start;
+    padding: 9px 0; border-bottom: 1px solid var(--rule);
+    font-size: 15.5px; line-height: 1.5; color: var(--ink-2);
+  }
+  .lines li:last-child { border-bottom: 0; }
+  .go {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    color: var(--go); border: 1px solid rgba(74, 222, 128, 0.5);
+    padding: 1px 7px; border-radius: 2px; margin-top: 2px;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .go::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--go); }
+  .lines li.pending .go { color: var(--dim); border-color: var(--rule-hi); }
+  .lines li.pending .go::before { background: var(--rule-hi); }
+  .lines li.pending { color: var(--dim); }
+  .idle { color: var(--dim); font-size: 15.5px; margin: 6px 0 0; }
+  .idle ul { margin: 10px 0 0; padding-left: 18px; }
+  .idle li { margin: 4px 0; }
+  .poll-foot {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 12px 18px; border-top: 1px solid var(--rule);
+    font-size: 14px; color: var(--dim);
+  }
+  .linkbtn {
+    background: none; border: 0; padding: 0; cursor: pointer;
+    font: inherit; color: var(--link); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .linkbtn:hover { color: var(--ink); }
+  .linkbtn[hidden], #trackResume[hidden] { display: none; }
+
+  /* ---------- Relevance marking ---------- */
+  .flag {
+    display: none;
+    font-family: var(--mono); font-size: 12px; color: var(--amber);
+    border: 1px solid rgba(245, 176, 65, 0.5); border-radius: 2px;
+    padding: 0 7px; margin-left: 8px; vertical-align: 2px; white-space: nowrap;
+  }
+  .entry h3, .card h3, .sys h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+  .entry h3 .flag, .card h3 .flag, .sys h3 .flag, .status-chip { margin-left: 0; vertical-align: baseline; }
+  body.filtered [data-tracks] { transition: opacity .25s ease; }
+  body.filtered [data-tracks]:not(.match) { opacity: 0.5; }
+  body.filtered .match .flag { display: inline-block; }
+  body.filtered .entry.match { border-left-color: var(--amber); }
+  body.filtered .card.match { border-color: rgba(245, 176, 65, 0.6); }
+  body.filtered .sys.match { border-top-color: var(--amber); }
+  @media (prefers-reduced-motion: reduce) { body.filtered [data-tracks] { transition: none; } }
+
+  /* ---------- Flight log ---------- */
+  .log { display: grid; gap: 0; }
+  .entry {
+    display: grid; grid-template-columns: 170px minmax(0, 1fr);
+    gap: 28px; padding: 22px 0 22px 20px;
+    border-left: 2px solid var(--rule-hi);
+    position: relative;
+  }
+  .entry::before {
+    content: ''; position: absolute; left: -6px; top: 30px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--console); border: 2px solid var(--rule-hi);
+  }
+  body.filtered .entry.match::before { border-color: var(--amber); background: var(--amber); }
+  .when { font-family: var(--mono); font-size: 13.5px; color: var(--dim); padding-top: 4px; font-variant-numeric: tabular-nums; }
+  .when small { display: block; font-size: 12.5px; margin-top: 2px; }
+  .entry h3, .card h3 {
+    font-family: var(--cond); font-weight: 600; font-size: 22px; line-height: 1.25; margin: 0;
+  }
+  .org { color: var(--ink-2); margin: 2px 0 10px; font-size: 16px; }
+  .entry ul, .card ul { margin: 0; padding-left: 18px; color: var(--ink-2); max-width: 70ch; }
+  .entry li, .card li { margin: 5px 0; }
+  .entry li::marker, .card li::marker { color: var(--dim); }
+  b.n { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Payloads ---------- */
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 4px;
+    padding: 22px 22px 20px;
+  }
+  .card.wide { grid-column: 1 / -1; }
+  .meta {
+    font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+    margin: 6px 0 12px; display: flex; flex-wrap: wrap; gap: 2px 14px; line-height: 1.5;
+  }
+  .status-chip {
+    display: inline-flex; align-items: center; gap: 5px; margin-left: 8px; vertical-align: 3px;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0; color: var(--amber); white-space: nowrap;
+    opacity: 0.85;
+  }
+  .status-chip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; box-shadow: inset 0 0 0 1.2px var(--amber); }
+  .card p { margin: 0 0 10px; color: var(--ink-2); max-width: 70ch; }
+
+
+  /* ---------- Lab reports ---------- */
+  .labs-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin: 0 0 14px; }
+  .labs-head h3 { font-family: var(--cond); font-weight: 600; font-size: 22px; margin: 0; }
+  .labs-head p { margin: 0; color: var(--dim); max-width: 70ch; font-size: 15.5px; }
+  .labs { display: grid; gap: 16px; margin-bottom: 44px; }
+  .lab { padding: 24px 24px 22px; }
+  .lab-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px 20px; flex-wrap: wrap; }
+  .lab-link {
+    font-family: var(--cond); font-weight: 600; font-size: 15px; white-space: nowrap;
+    color: var(--ink); text-decoration: none; border: 1px solid var(--rule-hi);
+    padding: 7px 12px; border-radius: 3px;
+  }
+  .lab-link:hover { border-color: var(--amber); color: var(--ink); }
+  .lab-body { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 28px; margin-top: 6px; }
+  .lab-text .q { font-family: var(--cond); font-weight: 500; font-size: 19px; line-height: 1.35; color: var(--ink); margin: 2px 0 6px; max-width: 46ch; }
+  .lab-text h4 { font-family: var(--cond); font-weight: 600; font-size: 15.5px; color: var(--ink); margin: 16px 0 3px; }
+  .lab-text p { margin: 0; color: var(--ink-2); max-width: 64ch; }
+  .lab-text p.result { color: var(--ink); border-left: 2px solid var(--amber); padding-left: 12px; }
+  .lab-side { display: grid; gap: 14px; align-content: start; }
+  .lab-fig { margin: 0; background: var(--console-deep); border: 1px solid var(--rule); border-radius: 4px; padding: 14px 14px 12px; }
+  .lab-fig img { display: block; width: 100%; height: auto; border-radius: 2px; background: #fff; }
+  .lab-fig figcaption { font-size: 13.5px; color: var(--dim); margin-top: 10px; line-height: 1.5; }
+  .chart { display: block; width: 100%; height: auto; }
+  .chart .grid { stroke: var(--rule); stroke-width: 1; }
+  .chart .tick { fill: var(--dim); font-family: var(--mono); font-size: 13px; }
+  .chart .axis { fill: var(--dim); font-family: var(--sans); font-size: 14px; }
+  .chart .theory { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 5 5; }
+  .chart .fit-au { stroke: var(--amber); stroke-width: 2; }
+  .chart .pt-au { fill: var(--amber); }
+  .chart .err-au { stroke: var(--amber); stroke-width: 1.5; }
+  .chart .pt-al { fill: var(--console-deep); stroke: var(--link); stroke-width: 2; }
+  .chart .err-al { stroke: var(--link); stroke-width: 1.5; }
+  .chart .pt-fall { fill: var(--console-deep); stroke: var(--link); stroke-width: 2; }
+  .chart .err-fall { stroke: var(--link); stroke-width: 1.5; }
+  .chart .pt-rise { fill: var(--amber); }
+  .chart .err-rise { stroke: var(--amber); stroke-width: 1.5; }
+  .chart .divider { stroke: var(--rule-hi); stroke-width: 1; stroke-dasharray: 3 4; }
+  .chart .label { fill: var(--ink-2); font-family: var(--mono); font-size: 12px; }
+  .chart .bracket { stroke: var(--dim); stroke-width: 1.2; }
+  .sw.sw-fall { width: 9px; height: 9px; border: 2px solid var(--link); border-radius: 50%; }
+  .sw.sw-rise { width: 9px; height: 9px; border: 0; background: var(--amber); }
+  .sw.sw-pk { width: 9px; height: 9px; border: 0; border-radius: 50%; background: var(--amber); }
+  .legend { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; color: var(--ink-2); }
+  .legend li { display: inline-flex; align-items: center; gap: 7px; }
+  .sw { display: inline-block; width: 18px; height: 0; border-top: 2px solid; }
+  .sw-au { border-color: var(--amber); }
+  .sw-al { width: 9px; height: 9px; border: 2px solid var(--link); border-radius: 50%; }
+  .sw-th { border-top: 2px dashed var(--ink-2); }
+  .specs { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
+  .specs div { padding: 9px 0; border-top: 1px solid var(--rule); }
+  .specs dt { font-family: var(--mono); font-size: 12px; color: var(--dim); }
+  .specs dd { margin: 2px 0 0; color: var(--ink); font-size: 15px; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Systems ---------- */
+  .systems { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+  .sys { border-top: 2px solid var(--rule-hi); padding: 16px 0 26px; }
+  .sys h3 { font-family: var(--cond); font-weight: 600; font-size: 19px; margin: 0 0 10px; }
+  .sys ul { list-style: none; margin: 0; padding: 0; color: var(--ink-2); font-size: 16px; }
+  .sys li { padding: 5px 0; border-bottom: 1px solid var(--rule); }
+  .sys li:last-child { border-bottom: 0; }
+
+  /* ---------- Booster (education) ---------- */
+  .booster { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; }
+  .booster .card h4 {
+    font-family: var(--cond); font-weight: 600; font-size: 16px; color: var(--ink);
+    margin: 16px 0 4px;
+  }
+  .booster .card p { margin: 0; }
+
+  .booster { grid-template-columns: minmax(0, 1fr); }
+  .course-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 36px; align-items: start; }
+  .course-col > div + div { margin-top: 18px; }
+  .c-code { font-family: var(--mono); font-size: 13px; color: var(--dim); display: inline-block; min-width: 86px; }
+  .booster .course-groups h4 { margin: 14px 0 6px; }
+  .courses { list-style: none; margin: 0; padding: 0; }
+  .courses li {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 8px 0; border-bottom: 1px solid var(--rule);
+    color: var(--ink); font-size: 16px;
+  }
+  .courses li:last-child { border-bottom: 0; }
+  .c-state {
+    font-family: var(--mono); font-size: 12px; color: var(--dim);
+    display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
+  }
+  .c-state::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--go); }
+  .c-state.now { color: var(--amber); }
+  .c-state.now::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--amber); }
+  .c-state.next::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--dim); }
+  body.filtered .courses li.match { box-shadow: inset 2px 0 0 var(--amber); padding-left: 10px; }
+  .card .creds { max-width: none; padding: 0; }
+  .creds { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; }
+  .creds li { padding: 12px 0; border-top: 1px solid var(--rule); color: var(--ink-2); }
+  @media (max-width: 980px) { .creds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 720px) { .creds { grid-template-columns: minmax(0, 1fr); } }
+  .creds strong { color: var(--ink); font-weight: 600; display: block; }
+
+
+  /* ---------- Résumés ---------- */
+  .rcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 720px) { .rcards { grid-template-columns: minmax(0, 1fr); } }
+  .rcard { display: flex; flex-direction: column; padding: 20px 20px 18px; }
+  .rcard p { color: var(--ink-2); margin: 8px 0 0; font-size: 15.5px; }
+  .rcard .roles { color: var(--ink-2); font-size: 14.5px; margin-top: 12px; }
+  .rcard .roles span { display: block; font-family: var(--mono); font-size: 12px; color: var(--dim); margin-bottom: 2px; }
+  .rcard-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; }
+  .rcard-actions .btn { font-size: 15px; padding: 8px 12px; }
+  .rnote { color: var(--dim); margin: 18px 0 0; font-size: 15px; }
+
+  /* ---------- CAPCOM ---------- */
+  .comms { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+  .comms p { color: var(--ink-2); max-width: 52ch; margin: 0 0 20px; }
+  .channels { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-hi); }
+  .channels li {
+    display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px;
+    padding: 14px 0; border-bottom: 1px solid var(--rule);
+  }
+  .channels .k { font-family: var(--mono); font-size: 13px; color: var(--dim); padding-top: 2px; }
+  .channels a { word-break: break-word; }
+
+  footer {
+    border-top: 1px solid var(--rule); padding: 24px 0 40px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+  }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .systems { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nav a:not(.pdf) { display: none; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    section { padding: 56px 0; }
+    .met { display: none; }
+    .entry { grid-template-columns: 1fr; gap: 6px; padding-left: 18px; }
+    .entry::before { top: 26px; }
+    .cards, .booster, .comms, .systems, .course-groups { grid-template-columns: minmax(0, 1fr); }
+    .c-code { display: block; min-width: 0; }
+    .card.wide { grid-column: auto; }
+    .lab-body { grid-template-columns: minmax(0, 1fr); }
+    .lab { padding: 18px 16px; }
+    .specs { grid-template-columns: minmax(0, 1fr); }
+    .channels li { grid-template-columns: 1fr; gap: 2px; }
+    .readout { min-height: 0; }
+    .name span + span { -webkit-text-stroke-width: 1.2px; }
+  }
+
+  /* ---------- Print: plain, light, one column ---------- */
+  @media print {
+    :root { --ink: #111; --ink-2: #222; --dim: #555; --rule: #ccc; --rule-hi: #999; --amber: #8a5a00; --link: #0b4f8a; }
+    body { background: #fff; font-size: 11pt; }
+    .bar, .poll, .ctas, .hero::before, .skip { display: none !important; }
+    section, .hero { padding: 18px 0; }
+    .hero .wrap, .cards, .booster, .comms, .systems { grid-template-columns: 1fr; }
+    .card { background: #fff; break-inside: avoid; }
+    .entry { break-inside: avoid; }
+    .name span + span { color: #111; -webkit-text-stroke: 0; }
+    body.filtered [data-tracks]:not(.match) { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="callsign" href="#top"><span class="lamp" aria-hidden="true"></span>Omeed Lodin</a>
+    <div class="met" title="Mission elapsed time since my first day at York University, Sept 2022"><b>MET</b> <span id="met">—</span></div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#training">Education</a>
+      <a href="#log">Experience</a>
+      <a href="#payloads">Projects</a>
+      <a href="#systems">Skills</a>
+      <a href="#resumes">Résumés</a>
+      <a href="#capcom">Contact</a>
+      <a class="pdf" id="navResume" href="#resumes">Résumés</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= FLIGHT: brief + readiness poll ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="plate">FLIGHT</span>
+      <h1 class="name"><span>Omeed</span><span>Lodin</span></h1>
+      <p class="role">Physics &amp; Astronomy at York University, looking for work where physics meets real hardware.</p>
+      <p class="lede">I learn by taking things apart and putting them back to spec: an engine I rebuilt from the service manual (100,000+ km since), 20+ custom PCs, and IT support and forensic work on client devices. In the lab I’ve run Rutherford scattering with a sealed source, kept the notebook, and written the report.</p>
+      <ul class="status">
+        <li><span class="k">Base</span>Ajax, Ontario (Greater Toronto Area), open to relocating</li>
+        <li><span class="k">Available</span>Part-time now, full-time after graduation in 2027</li>
+        <li><span class="k">Clearance</span>Eligible for Canadian security clearance</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn primary" href="mailto:omeed_lodin@live.com">Email me</a>
+        <a class="btn" href="#resumes">Résumés</a>
+        <a class="btn" href="https://www.linkedin.com/in/omeed-lodin">LinkedIn</a>
+        <a class="btn" href="https://github.com/OmeedLodin">GitHub</a>
+      </div>
+    </div>
+
+    <div class="poll" id="poll">
+      <div class="poll-top">
+        <span class="live"><span class="lamp" aria-hidden="true"></span>Readiness poll</span>
+        <span id="clock" aria-hidden="true">UTC --:--:--</span>
+      </div>
+      <div class="poll-body">
+        <h3>Which field are you hiring for?</h3>
+        <p class="hint">Pick one. The poll lists the evidence that matters to you, and the rest of the page marks the relevant experience.</p>
+        <div class="tracks" role="group" aria-label="Choose a field">
+          <button class="track" type="button" data-track="nuclear" aria-pressed="false">Nuclear operations</button>
+          <button class="track" type="button" data-track="space" aria-pressed="false">Space hardware</button>
+          <button class="track" type="button" data-track="quantum" aria-pressed="false">Quantum &amp; photonics labs</button>
+          <button class="track" type="button" data-track="data" aria-pressed="false">Data &amp; AI</button>
+        </div>
+        <div class="readout" id="readout" aria-live="polite">
+          <div class="idle" id="idle">
+            Standing by. Every line in the poll is backed by something further down this page. The fields I’m working toward:
+            <ul>
+              <li>Nuclear plant operations and radiation protection</li>
+              <li>Spacecraft assembly, integration and test</li>
+              <li>Quantum and photonics lab and test work</li>
+              <li>Scientific data analysis and machine learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="poll-foot">
+        <span id="pollState">No field selected</span>
+        <span>
+          <a id="trackResume" href="#" target="_blank" rel="noopener" hidden>Open the résumé for this field</a>
+          &nbsp;
+          <button class="linkbtn" type="button" id="copyLink" hidden>Copy link to this view</button>
+          &nbsp;
+          <button class="linkbtn" type="button" id="clearTrack" hidden>Show everything</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOSTER: education ================= -->
+<section id="training">
+  <div class="wrap">
+    <div class="head">
+      <span class="plate">BOOSTER</span>
+      <h2>Education</h2>
+      <p>Every course in my degree, by its official York code and title. Pick a field in the poll above and the relevant courses are marked.</p>
+    </div>
+
+    <div class="booster">
+      <article class="card">
+        <h3>York University, B.Sc. Physics &amp; Astronomy</h3>
+        <div class="meta"><span>Toronto, ON</span><span>Sept 2022 – expected 2027</span><span>Astronomy and Astrophysics stream</span></div>
+        <div class="course-groups">
+          <div class="course-col">
+            <div>
+              <h4>Physics</h4>
+              <ul class="courses">
+                <li data-tracks="nuclear space quantum"><span><span class="c-code">PHYS 1011</span>Physics I</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="nuclear space quantum"><span><span class="c-code">PHYS 1012</span>Physics II</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="space nuclear"><span><span class="c-code">PHYS 2010</span>Classical Mechanics</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="quantum nuclear space"><span><span class="c-code">PHYS 2020</span>Electricity and Magnetism</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="nuclear quantum"><span><span class="c-code">PHYS 2040</span>Relativity and Modern Physics</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="quantum space"><span><span class="c-code">PHYS 2060</span>Optics and Spectra</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="quantum space nuclear"><span><span class="c-code">PHYS 3020</span>Electromagnetics I</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="nuclear quantum"><span><span class="c-code">PHYS 3030</span>Statistical and Thermal Physics</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="quantum nuclear"><span><span class="c-code">PHYS 3040</span>Modern Physics</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="quantum"><span><span class="c-code">PHYS 4010</span>Quantum Mechanics</span><span class="c-state next">Winter 2027</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Astronomy and space</h4>
+              <ul class="courses">
+                <li data-tracks="space"><span><span class="c-code">PHYS 1070</span>Fundamentals of Astronomy</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="space data"><span><span class="c-code">PHYS 2070</span>Galaxies and the Universe</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="space data"><span><span class="c-code">ESSE 4220</span>Remote Sensing of the Earth’s Surface</span><span class="c-state now">In progress</span></li>
+                <li data-tracks="space data"><span><span class="c-code">PHYS 4270</span>Astronomical Techniques</span><span class="c-state now">In progress</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="course-col">
+            <div>
+              <h4>Labs, computing and data</h4>
+              <ul class="courses">
+                <li data-tracks="data quantum nuclear"><span><span class="c-code">PHYS 2213</span>Experimental Physics with Data Analysis</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="nuclear quantum"><span><span class="c-code">PHYS 3220</span>Experiments in Modern Physics</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="data quantum"><span><span class="c-code">PHYS 2030</span>Computational Methods for Physicists and Engineers</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="data"><span><span class="c-code">EECS 1541</span>Introduction to Computing for the Physical Sciences</span><span class="c-state now">In progress</span></li>
+                <li data-tracks="data"><span><span class="c-code">PHYS 3130</span>Practical Data Science Methods in Physical Sciences</span><span class="c-state next">Winter 2027</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Mathematics and chemistry</h4>
+              <ul class="courses">
+                <li data-tracks="data quantum"><span><span class="c-code">MATH 1013</span>Applied Calculus I</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="data quantum"><span><span class="c-code">MATH 1014</span>Applied Calculus II</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="data quantum"><span><span class="c-code">MATH 1025</span>Applied Linear Algebra</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="data quantum"><span><span class="c-code">MATH 2015</span>Applied Multivariate and Vector Calculus</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="data quantum"><span><span class="c-code">MATH 2271</span>Differential Equations for Scientists and Engineers</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="nuclear"><span><span class="c-code">CHEM 1000</span>Chemical Structure</span><span class="c-state done">Completed</span></li>
+                <li data-tracks="nuclear"><span><span class="c-code">CHEM 1001</span>Chemical Dynamics</span><span class="c-state done">Completed</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="card">
+        <ul class="creds">
+          <li><strong>Top 10 of 150</strong>Physics Experiment Poster Challenge, 2024</li>
+          <li><strong>Ian and Dorothy MacDonald Award</strong>York University</li>
+          <li><strong>Ontario Scholar, 96% average</strong>On entry to York University, 2022</li>
+          <li><strong>Co-founder, Computer Science Club</strong>High school</li>
+          <li><strong>WHMIS certified</strong>Workplace hazardous materials safety</li>
+          <li><strong>Full G licence</strong>Ontario</li>
+          <li><strong>Security clearance</strong>Eligible for Canadian clearance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIDO: flight log ================= -->
+<section id="log">
+  <div class="wrap">
+    <div class="head">
+      <span class="plate">FIDO</span>
+      <h2>Experience</h2>
+      <p>Most recent first.</p>
+    </div>
+
+    <div class="log">
+      <article class="entry" data-tracks="data nuclear space">
+        <div class="when">Summer 2026<small>Toronto, ON</small></div>
+        <div>
+          <h3>Computer Forensics Intern <span class="flag">Relevant</span></h3>
+          <p class="org">KlueTek, individual &amp; corporate IT solutions</p>
+          <ul>
+            <li>Ran forensic triage scripts on compromised client devices to troubleshoot and identify the source of compromise.</li>
+            <li>Completed client intake and preliminary engagement documentation before any work began on a system.</li>
+            <li>Kept devices, records and client information secure, accurate and confidential for each case.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry" data-tracks="">
+        <div class="when">May 2025 – May 2026<small>Toronto / Montreal</small></div>
+        <div>
+          <h3>Business Development Manager <span class="flag">Relevant</span></h3>
+          <p class="org">Loopr Marketing, video game industry marketing</p>
+          <ul>
+            <li>Generated <b class="n">15+ qualified leads per week</b> against a 10-lead team target through industry expos and direct outreach.</li>
+            <li>Tracked contacts, responses and follow-ups in a spreadsheet log to keep the pipeline organized.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry" data-tracks="">
+        <div class="when">Aug 2023 – May 2025<small>Mississauga, ON</small></div>
+        <div>
+          <h3>Sales Representative <span class="flag">Relevant</span></h3>
+          <p class="org">ASR Building Supplies, construction supply</p>
+          <ul>
+            <li>Served contractors at a high-volume counter alongside a team walk-in average of 10 large orders a day.</li>
+            <li>Cut deal-closing time by <b class="n">roughly 30%</b> by running dedicated closing meetings.</li>
+            <li>Won new accounts by pitching ASR to contractors who bought from big-box retailers.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry" data-tracks="space">
+        <div class="when">Jun 2022 – Aug 2023<small>Toronto, ON</small></div>
+        <div>
+          <h3>IT Support Specialist <span class="flag">Relevant</span></h3>
+          <p class="org">KlueTek, individual &amp; corporate IT solutions</p>
+          <ul>
+            <li>Supported <b class="n">50+ clients</b> in person and remotely, troubleshooting and resolving hardware and software faults.</li>
+            <li>Performed component-level repairs and part swaps (HDD/SSD, RAM, GPU, PSU) and kept service records for each job.</li>
+            <li>Built and maintained client websites and ran Google Ads campaigns for client acquisition.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry" data-tracks="nuclear">
+        <div class="when">Nov 2019 – Jun 2021<small>Ajax, ON</small></div>
+        <div>
+          <h3>Manager <span class="flag">Relevant</span></h3>
+          <p class="org">Maestros Gourmet Pizza</p>
+          <ul>
+            <li>Worked <b class="n">night shifts six nights a week</b> through high school; closed the store, opened on weekends and handled shift turnover.</li>
+            <li>Ran daily operations, inventory, kitchen equipment upkeep and staff training.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAYLOAD: projects ================= -->
+<section id="payloads">
+  <div class="wrap">
+    <div class="head">
+      <span class="plate">PAYLOAD</span>
+      <h2>Projects and lab work</h2>
+      <p>Hands-on builds and physics work outside of a job title.</p>
+    </div>
+
+    <div class="labs-head">
+      <h3>Lab reports</h3>
+      <p>Three experiments from PHYS 3220 Experiments in Modern Physics (Winter 2026), each written up as a full report. <a href="https://github.com/OmeedLodin/experimental-physics-analysis">Reports and plots on GitHub</a></p>
+    </div>
+
+    <div class="labs">
+      <article class="card lab" data-tracks="nuclear quantum data">
+        <div class="lab-top">
+          <div>
+            <h3>Rutherford scattering <span class="flag">Relevant</span></h3>
+            <div class="meta"><span>Mar 2026</span><span>With a lab partner</span><span>Excel · LaTeX</span></div>
+          </div>
+          <a class="lab-link" href="./reports/rutherford-scattering.pdf" target="_blank" rel="noopener">Read the report (PDF)</a>
+        </div>
+        <div class="lab-body">
+          <div class="lab-text">
+            <p class="q">Does alpha scattering off a thin metal foil fall off as 1/sin⁴(φ/2), the signature of a small, dense nucleus?</p>
+            <h4>What I did</h4>
+            <p>Ran the scattering chamber under vacuum with a sealed alpha source, a collimated beam and a detector on a rotating arm. Counted alpha particles for about 60 seconds at each angle from 5° to 30°, first with gold foil and then aluminum, repeated the measurement at each angle, and took background counts under the same conditions. Followed radiation-safety rules throughout: minimal handling, keeping distance, and the source shielded when not in use.</p>
+            <h4>Analysis</h4>
+            <p>Converted counts to rates and linearized the model to ln R = −4 ln sin(φ/2) + C, so theory predicts a slope of −4. Propagated Poisson counting uncertainty (σ = √N) into ln R and fit each target.</p>
+            <h4>Result</h4>
+            <p class="result">Gold gave a slope of −4.52, within 13% of theory, with the steep fall-off a point-like nucleus predicts.</p>
+            <h4>What limited it</h4>
+            <p>Aluminum produced only a handful of counts past 15°, so counting noise dominated and the log transform amplified it. Background, the detector’s finite width and possible multiple scattering in the foil add systematic error at large angles.</p>
+          </div>
+          <div class="lab-side">
+            <figure class="lab-fig">
+              <svg class="chart" viewBox="0 0 560 330" role="img" aria-labelledby="ruthTitle ruthDesc">
+<title id="ruthTitle">Rutherford scattering, linearized count rate versus angle</title>
+<desc id="ruthDesc">Natural log of count rate against ln sin(phi/2) for gold (6 angles) and aluminum (4 angles). The gold best-fit slope is -4.52 against a theoretical -4.</desc>
+<line class="grid" x1="58" x2="540" y1="267.1" y2="267.1"/>
+<text class="tick" x="50" y="271.1" text-anchor="end">-6</text>
+<line class="grid" x1="58" x2="540" y1="218.3" y2="218.3"/>
+<text class="tick" x="50" y="222.3" text-anchor="end">-4</text>
+<line class="grid" x1="58" x2="540" y1="169.4" y2="169.4"/>
+<text class="tick" x="50" y="173.4" text-anchor="end">-2</text>
+<line class="grid" x1="58" x2="540" y1="120.6" y2="120.6"/>
+<text class="tick" x="50" y="124.6" text-anchor="end">0</text>
+<line class="grid" x1="58" x2="540" y1="71.7" y2="71.7"/>
+<text class="tick" x="50" y="75.7" text-anchor="end">2</text>
+<line class="grid" x1="58" x2="540" y1="22.9" y2="22.9"/>
+<text class="tick" x="50" y="26.9" text-anchor="end">4</text>
+<line class="grid" x1="96.6" x2="96.6" y1="18" y2="272"/>
+<text class="tick" x="96.6" y="290" text-anchor="middle">5°</text>
+<line class="grid" x1="255.4" x2="255.4" y1="18" y2="272"/>
+<text class="tick" x="255.4" y="290" text-anchor="middle">10°</text>
+<line class="grid" x1="348.1" x2="348.1" y1="18" y2="272"/>
+<text class="tick" x="348.1" y="290" text-anchor="middle">15°</text>
+<line class="grid" x1="413.5" x2="413.5" y1="18" y2="272"/>
+<text class="tick" x="413.5" y="290" text-anchor="middle">20°</text>
+<line class="grid" x1="464.3" x2="464.3" y1="18" y2="272"/>
+<text class="tick" x="464.3" y="290" text-anchor="middle">25°</text>
+<line class="grid" x1="505.1" x2="505.1" y1="18" y2="272"/>
+<text class="tick" x="505.1" y="290" text-anchor="middle">30°</text>
+<text class="axis" x="299.0" y="322" text-anchor="middle">Scattering angle φ (plotted as ln sin(φ/2))</text>
+<text class="axis" transform="translate(14 145.0) rotate(-90)" text-anchor="middle">ln(count rate, s⁻¹)</text>
+<line class="theory" x1="69.5" y1="31.8" x2="528.5" y2="227.2"/>
+<line class="fit-au" x1="69.5" y1="16.4" x2="517.0" y2="231.7"/>
+<line class="err-al" x1="101.6" x2="101.6" y1="73.6" y2="71.3"/>
+<circle class="pt-al" cx="101.6" cy="72.4" r="4.5"/>
+<line class="err-al" x1="260.4" x2="260.4" y1="110.4" y2="105.6"/>
+<circle class="pt-al" cx="260.4" cy="108.0" r="4.5"/>
+<line class="err-al" x1="353.1" x2="353.1" y1="221.0" y2="186.5"/>
+<circle class="pt-al" cx="353.1" cy="203.7" r="4.5"/>
+<line class="err-al" x1="418.5" x2="418.5" y1="264.6" y2="201.6"/>
+<circle class="pt-al" cx="418.5" cy="233.1" r="4.5"/>
+<line class="err-au" x1="91.6" x2="91.6" y1="39.8" y2="38.6"/>
+<circle class="pt-au" cx="91.6" cy="39.2" r="4.5"/>
+<line class="err-au" x1="250.4" x2="250.4" y1="85.8" y2="82.8"/>
+<circle class="pt-au" cx="250.4" cy="84.3" r="4.5"/>
+<line class="err-au" x1="343.1" x2="343.1" y1="156.6" y2="144.9"/>
+<circle class="pt-au" cx="343.1" cy="150.7" r="4.5"/>
+<line class="err-au" x1="408.5" x2="408.5" y1="210.2" y2="181.0"/>
+<circle class="pt-au" cx="408.5" cy="195.6" r="4.5"/>
+<line class="err-au" x1="459.3" x2="459.3" y1="228.6" y2="190.0"/>
+<circle class="pt-au" cx="459.3" cy="209.3" r="4.5"/>
+<line class="err-au" x1="500.1" x2="500.1" y1="245.4" y2="196.6"/>
+<circle class="pt-au" cx="500.1" cy="221.0" r="4.5"/>
+</svg>
+              <ul class="legend">
+                <li><span class="sw sw-au"></span>Gold, best fit (slope −4.52)</li>
+                <li><span class="sw sw-al"></span>Aluminum</li>
+                <li><span class="sw sw-th"></span>Theory (slope −4)</li>
+              </ul>
+              <figcaption>Linearized count rate by angle, with Poisson error bars. Redrawn from the report’s data tables.</figcaption>
+            </figure>
+            <dl class="specs">
+            <div><dt>Targets</dt><dd>Gold and aluminum foil</dd></div>
+            <div><dt>Angles</dt><dd>5° to 30°, about 60 s per count</dd></div>
+            <div><dt>Gold slope</dt><dd>−4.52 against −4 in theory</dd></div>
+            <div><dt>Uncertainty</dt><dd>Poisson counting, σ = √N</dd></div>
+            <div><dt>Safety</dt><dd>Sealed alpha source, shielded when idle</dd></div>
+          </dl>
+          </div>
+        </div>
+      </article>
+
+      <article class="card lab" data-tracks="quantum data">
+        <div class="lab-top">
+          <div>
+            <h3>Millikan oil drop <span class="flag">Relevant</span></h3>
+            <div class="meta"><span>Jan 2026</span><span>With three lab partners</span><span>Excel · LaTeX</span></div>
+          </div>
+          <a class="lab-link" href="./reports/millikan-oil-drop.pdf" target="_blank" rel="noopener">Read the report (PDF)</a>
+        </div>
+        <div class="lab-body">
+          <div class="lab-text">
+            <p class="q">Is electric charge quantized, and how big is the smallest unit?</p>
+            <h4>What I did</h4>
+            <p>Sprayed oil droplets between two plates 6 mm apart and followed single droplets through a USB microscope camera. Calibrated the camera with a ruler in the focal plane, then timed each droplet falling with no field and rising at 500 V, at least ten times each, for five positive and five negative droplets with the polarity reversed between sets. Logged room temperature and pressure for the viscosity and slip corrections, and switched the high voltage off before putting anything in the optical path.</p>
+            <h4>Analysis</h4>
+            <p>Stokes’ law turned fall velocity into droplet radius, and the force balance under the field gave each droplet’s charge, with a Cunningham slip correction for droplets close to the mean free path of air. Timing uncertainty, as the standard error of the mean, was propagated through radius and charge.</p>
+            <h4>What limited it</h4>
+            <p>Brownian motion made the timings jitter and was the largest source of random error. Droplets that drifted out of focus were dropped, because drift changes the distance calibration.</p>
+          </div>
+          <div class="lab-side">
+            <figure class="lab-fig">
+              <svg class="chart" viewBox="0 0 560 330" role="img" aria-labelledby="milTitle milDesc">
+<title id="milTitle">Millikan oil drop, measured droplet velocities</title>
+<desc id="milDesc">Terminal fall velocity with no field and rise velocity at 500 volts for ten droplets, five from each polarity set, with error bars from repeated timings. Fall velocities sit between about 32 and 80 micrometres per second; rise velocities range from about 29 to 268.</desc>
+<line class="grid" x1="58" x2="540" y1="272.0" y2="272.0"/>
+<text class="tick" x="50" y="276.0" text-anchor="end">0</text>
+<line class="grid" x1="58" x2="540" y1="208.5" y2="208.5"/>
+<text class="tick" x="50" y="212.5" text-anchor="end">100</text>
+<line class="grid" x1="58" x2="540" y1="145.0" y2="145.0"/>
+<text class="tick" x="50" y="149.0" text-anchor="end">200</text>
+<line class="grid" x1="58" x2="540" y1="81.5" y2="81.5"/>
+<text class="tick" x="50" y="85.5" text-anchor="end">300</text>
+<line class="grid" x1="58" x2="540" y1="18.0" y2="18.0"/>
+<text class="tick" x="50" y="22.0" text-anchor="end">400</text>
+<line class="divider" x1="299.0" x2="299.0" y1="18" y2="272"/>
+<text class="axis" x="180.9" y="322" text-anchor="middle">Regular polarity</text>
+<text class="axis" x="417.1" y="322" text-anchor="middle">Reversed polarity</text>
+<text class="tick" x="86.4" y="290" text-anchor="middle">1</text>
+<line class="err-fall" x1="80.4" x2="80.4" y1="234.5" y2="231.2"/>
+<circle class="pt-fall" cx="80.4" cy="232.9" r="4.5"/>
+<line class="err-rise" x1="92.4" x2="92.4" y1="239.9" y2="238.8"/>
+<rect class="pt-rise" x="88.4" y="235.4" width="8" height="8"/>
+<text class="tick" x="133.6" y="290" text-anchor="middle">2</text>
+<line class="err-fall" x1="127.6" x2="127.6" y1="248.3" y2="245.9"/>
+<circle class="pt-fall" cx="127.6" cy="247.1" r="4.5"/>
+<line class="err-rise" x1="139.6" x2="139.6" y1="255.0" y2="252.7"/>
+<rect class="pt-rise" x="135.6" y="249.8" width="8" height="8"/>
+<text class="tick" x="180.9" y="290" text-anchor="middle">3</text>
+<line class="err-fall" x1="174.9" x2="174.9" y1="255.4" y2="242.3"/>
+<circle class="pt-fall" cx="174.9" cy="248.8" r="4.5"/>
+<line class="err-rise" x1="186.9" x2="186.9" y1="235.3" y2="225.7"/>
+<rect class="pt-rise" x="182.9" y="226.5" width="8" height="8"/>
+<text class="tick" x="228.1" y="290" text-anchor="middle">4</text>
+<line class="err-fall" x1="222.1" x2="222.1" y1="252.3" y2="250.6"/>
+<circle class="pt-fall" cx="222.1" cy="251.4" r="4.5"/>
+<line class="err-rise" x1="234.1" x2="234.1" y1="243.9" y2="232.6"/>
+<rect class="pt-rise" x="230.1" y="234.2" width="8" height="8"/>
+<text class="tick" x="275.4" y="290" text-anchor="middle">5</text>
+<line class="err-fall" x1="269.4" x2="269.4" y1="254.9" y2="237.1"/>
+<circle class="pt-fall" cx="269.4" cy="246.0" r="4.5"/>
+<line class="err-rise" x1="281.4" x2="281.4" y1="242.9" y2="205.6"/>
+<rect class="pt-rise" x="277.4" y="220.2" width="8" height="8"/>
+<text class="tick" x="322.6" y="290" text-anchor="middle">1</text>
+<line class="err-fall" x1="316.6" x2="316.6" y1="232.5" y2="229.6"/>
+<circle class="pt-fall" cx="316.6" cy="231.0" r="4.5"/>
+<line class="err-rise" x1="328.6" x2="328.6" y1="137.1" y2="66.6"/>
+<rect class="pt-rise" x="324.6" y="97.8" width="8" height="8"/>
+<text class="tick" x="369.9" y="290" text-anchor="middle">2</text>
+<line class="err-fall" x1="363.9" x2="363.9" y1="237.2" y2="226.7"/>
+<circle class="pt-fall" cx="363.9" cy="231.9" r="4.5"/>
+<line class="err-rise" x1="375.9" x2="375.9" y1="129.8" y2="95.5"/>
+<rect class="pt-rise" x="371.9" y="108.6" width="8" height="8"/>
+<text class="tick" x="417.1" y="290" text-anchor="middle">3</text>
+<line class="err-fall" x1="411.1" x2="411.1" y1="227.4" y2="215.4"/>
+<circle class="pt-fall" cx="411.1" cy="221.4" r="4.5"/>
+<line class="err-rise" x1="423.1" x2="423.1" y1="210.4" y2="27.5"/>
+<rect class="pt-rise" x="419.1" y="115.0" width="8" height="8"/>
+<text class="tick" x="464.4" y="290" text-anchor="middle">4</text>
+<line class="err-fall" x1="458.4" x2="458.4" y1="243.6" y2="226.1"/>
+<circle class="pt-fall" cx="458.4" cy="234.9" r="4.5"/>
+<line class="err-rise" x1="470.4" x2="470.4" y1="160.4" y2="85.2"/>
+<rect class="pt-rise" x="466.4" y="118.8" width="8" height="8"/>
+<text class="tick" x="511.6" y="290" text-anchor="middle">5</text>
+<line class="err-fall" x1="505.6" x2="505.6" y1="245.0" y2="243.2"/>
+<circle class="pt-fall" cx="505.6" cy="244.1" r="4.5"/>
+<line class="err-rise" x1="517.6" x2="517.6" y1="210.3" y2="205.4"/>
+<rect class="pt-rise" x="513.6" y="203.9" width="8" height="8"/>
+
+<text class="axis" transform="translate(14 145.0) rotate(-90)" text-anchor="middle">Velocity (µm/s)</text>
+</svg>
+              <ul class="legend">
+                <li><span class="sw sw-fall"></span>Fall, no field</li>
+                <li><span class="sw sw-rise"></span>Rise at 500 V</li>
+              </ul>
+              <figcaption>Terminal velocity of each droplet, with error bars from the spread of 10+ repeated timings. Redrawn from the report’s data tables.</figcaption>
+            </figure>
+            <dl class="specs">
+            <div><dt>Droplets</dt><dd>10: five positive, five negative</dd></div>
+            <div><dt>Timings</dt><dd>10+ falls and rises per droplet</dd></div>
+            <div><dt>Calibration</dt><dd>560 pixels = 1.00 mm</dd></div>
+            <div><dt>Field</dt><dd>500 V across 6 mm, 8.33 × 10⁴ V/m</dd></div>
+            <div><dt>Radii (Stokes)</dt><dd>0.55 to 0.87 µm</dd></div>
+            <div><dt>Safety</dt><dd>High voltage off before touching the optics</dd></div>
+          </dl>
+          </div>
+        </div>
+      </article>
+
+      <article class="card lab" data-tracks="quantum space data">
+        <div class="lab-top">
+          <div>
+            <h3>Cavendish torsion balance <span class="flag">Relevant</span></h3>
+            <div class="meta"><span>Mar 2026</span><span>With a lab partner</span><span>Excel · LaTeX</span></div>
+          </div>
+          <a class="lab-link" href="./reports/cavendish-torsion-balance.pdf" target="_blank" rel="noopener">Read the report (PDF)</a>
+        </div>
+        <div class="lab-body">
+          <div class="lab-text">
+            <p class="q">Can the gravitational pull between lab-sized masses be measured with a torsion balance, and what value of G does it give?</p>
+            <h4>What I did</h4>
+            <p>Let the balance settle for about 45 minutes, then tracked a laser beam reflected off the balance mirror onto a linear photodiode array 0.81 m away, logging the spot position over time. Ran it twice, moving the large masses between runs.</p>
+            <h4>Analysis</h4>
+            <p>Picked six successive peaks to get the oscillation period, fit ln(amplitude) against time for the damping rate, converted the 23.5-pixel spot shift into an angle with the optical-lever relation, then derived the fibre’s torsion constant and G.</p>
+            <h4>Result</h4>
+            <p class="result">G = (9.77 ± 0.18) × 10⁻¹¹ m³ kg⁻¹ s⁻², about 46% above the accepted 6.674 × 10⁻¹¹.</p>
+            <h4>What limited it</h4>
+            <p>The report traces the gap to geometry and environment: G depends on the square of the mass separation, the lab wasn’t vibration-isolated, and the second run had no settling time. Proposed fixes: vibration isolation, tighter alignment and less manual peak-picking.</p>
+          </div>
+          <div class="lab-side">
+            <figure class="lab-fig">
+              <svg class="chart" viewBox="0 0 560 330" role="img" aria-labelledby="cavTitle cavDesc">
+<title id="cavTitle">Cavendish torsion balance, damping of the oscillation</title>
+<desc id="cavDesc">Natural log of oscillation amplitude at six successive peaks over about 2,600 seconds, falling in a straight line, which shows exponential damping. Peaks are about 493 seconds apart.</desc>
+<line class="grid" x1="58" x2="540" y1="272.0" y2="272.0"/>
+<text class="tick" x="50" y="276.0" text-anchor="end">0.8</text>
+<line class="grid" x1="58" x2="540" y1="208.5" y2="208.5"/>
+<text class="tick" x="50" y="212.5" text-anchor="end">1.2</text>
+<line class="grid" x1="58" x2="540" y1="145.0" y2="145.0"/>
+<text class="tick" x="50" y="149.0" text-anchor="end">1.6</text>
+<line class="grid" x1="58" x2="540" y1="81.5" y2="81.5"/>
+<text class="tick" x="50" y="85.5" text-anchor="end">2.0</text>
+<line class="grid" x1="58" x2="540" y1="18.0" y2="18.0"/>
+<text class="tick" x="50" y="22.0" text-anchor="end">2.4</text>
+<line class="grid" x1="58.0" x2="58.0" y1="18" y2="272"/>
+<text class="tick" x="58.0" y="290" text-anchor="middle">0</text>
+<line class="grid" x1="144.1" x2="144.1" y1="18" y2="272"/>
+<text class="tick" x="144.1" y="290" text-anchor="middle">500</text>
+<line class="grid" x1="230.1" x2="230.1" y1="18" y2="272"/>
+<text class="tick" x="230.1" y="290" text-anchor="middle">1000</text>
+<line class="grid" x1="316.2" x2="316.2" y1="18" y2="272"/>
+<text class="tick" x="316.2" y="290" text-anchor="middle">1500</text>
+<line class="grid" x1="402.3" x2="402.3" y1="18" y2="272"/>
+<text class="tick" x="402.3" y="290" text-anchor="middle">2000</text>
+<line class="grid" x1="488.4" x2="488.4" y1="18" y2="272"/>
+<text class="tick" x="488.4" y="290" text-anchor="middle">2500</text>
+<line class="fit-au" x1="58.0" y1="43.2" x2="540.0" y2="245.9"/>
+<circle class="pt-au" cx="84.4" cy="53.9" r="5"/>
+<text class="label" x="92.4" y="44.9">P1</text>
+<circle class="pt-au" cx="168.8" cy="92.6" r="5"/>
+<text class="label" x="176.8" y="83.6">P2</text>
+<circle class="pt-au" cx="255.2" cy="124.4" r="5"/>
+<text class="label" x="263.2" y="115.4">P3</text>
+<circle class="pt-au" cx="338.1" cy="160.4" r="5"/>
+<text class="label" x="346.1" y="151.4">P4</text>
+<circle class="pt-au" cx="424.5" cy="194.7" r="5"/>
+<text class="label" x="432.5" y="185.7">P5</text>
+<circle class="pt-au" cx="508.9" cy="235.5" r="5"/>
+<text class="label" x="516.9" y="226.5">P6</text>
+<line class="bracket" x1="84.4" x2="168.8" y1="248.2" y2="248.2"/>
+<line class="bracket" x1="84.4" x2="84.4" y1="243.2" y2="253.2"/>
+<line class="bracket" x1="168.8" x2="168.8" y1="243.2" y2="253.2"/>
+<text class="label" x="126.6" y="240.2" text-anchor="middle">one period ≈ 493 s</text>
+<text class="axis" x="299.0" y="322" text-anchor="middle">Time (s)</text>
+<text class="axis" transform="translate(14 145.0) rotate(-90)" text-anchor="middle">ln(amplitude, pixels)</text>
+</svg>
+              <ul class="legend">
+                <li><span class="sw sw-pk"></span>Oscillation peaks, run 1</li>
+                <li><span class="sw sw-au"></span>Exponential fit, β ≈ 4.6 × 10⁻⁴ s⁻¹</li>
+              </ul>
+              <figcaption>Log of the swing amplitude at six successive peaks. A straight line means exponential damping, and the spacing between peaks gives the period. Redrawn from the report’s data tables.</figcaption>
+            </figure>
+            <dl class="specs">
+            <div><dt>Period T</dt><dd>493.22 ± 0.13 s</dd></div>
+            <div><dt>Damping β</dt><dd>4.6 × 10⁻⁴ s⁻¹</dd></div>
+            <div><dt>Deflection Δθ</dt><dd>1.16 × 10⁻² rad</dd></div>
+            <div><dt>Torsion constant</dt><dd>1.62 × 10⁻⁸ N·m/rad</dd></div>
+            <div><dt>Result G</dt><dd>(9.77 ± 0.18) × 10⁻¹¹ m³ kg⁻¹ s⁻²</dd></div>
+          </dl>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="labs-head">
+      <h3>Builds and data projects</h3>
+    </div>
+
+    <div class="cards">
+      <article class="card" data-tracks="space data quantum">
+        <h3>Galaxy PGC-70419 observation <span class="flag">Relevant</span></h3>
+        <div class="meta"><span>Python · DS9 · IRAF</span><span>Dec 2023</span></div>
+        <ul>
+          <li>Analyzed observational data from York’s CCD telescope to measure properties of the galaxy’s nucleus.</li>
+          <li>Wrote a formal technical report on method, measurements and findings.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tracks="data space">
+        <h3>Stellar classification <span class="status-chip">In progress</span> <span class="flag">Relevant</span></h3>
+        <div class="meta"><span>Python · Pandas · scikit-learn · Git</span><span>2026, with one collaborator</span></div>
+        <p>A three-class classifier (star, galaxy, quasar) on Sloan Digital Sky Survey DR18 data, version-controlled on <a href="https://github.com/OmeedLodin">GitHub</a>.</p>
+        <ul>
+          <li>Done: cleaned the data, analyzed the class distribution and feature correlations, built a logistic-regression baseline.</li>
+          <li>Next: handle class imbalance with a stratified split, then compare other models.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tracks="space quantum">
+        <h3>Custom PC builds <span class="flag">Relevant</span></h3>
+        <div class="meta"><span>Side business</span><span>2019 – 2024</span></div>
+        <ul>
+          <li>Built <b class="n">20+ custom PCs</b> for customers: chose compatible parts, assembled and wired them, installed the OS and drivers.</li>
+          <li>Stress-tested every build and checked temperatures before handoff.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tracks="nuclear space">
+        <h3>Engine rebuild and maintenance <span class="flag">Relevant</span></h3>
+        <div class="meta"><span>2017 Audi A4, 2.0L turbocharged inline-4</span><span>Ongoing</span></div>
+        <ul>
+          <li>Rebuilt the engine to service-manual procedures to fix coolant leaks, gaskets, the timing chain and carbon buildup: <b class="n">100,000+ km</b> since.</li>
+          <li>Isolate the battery before electrical or sensor work; drain, refill and bleed the cooling system; torque to manufacturer spec.</li>
+          <li>Diagnose faults with an OBD-II scanner and fix them: water pump, turbo valve, brakes, sensors.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EECOM: systems ================= -->
+<section id="systems">
+  <div class="wrap">
+    <div class="head">
+      <span class="plate">EECOM</span>
+      <h2>Skills</h2>
+      <p>Only tools and methods I’ve actually used in a job, a course or a project above.</p>
+    </div>
+
+    <div class="systems">
+      <div class="sys" data-tracks="quantum space nuclear">
+        <h3>Lab &amp; electrical <span class="flag">Relevant</span></h3>
+        <ul>
+          <li>Oscilloscope, multimeter</li>
+          <li>DC power supply, soldering iron</li>
+          <li>Lab notebooks and formal reports</li>
+          <li>Experiments in Modern Physics (PHYS 3220)</li>
+        </ul>
+      </div>
+      <div class="sys" data-tracks="nuclear space">
+        <h3>Mechanical &amp; hardware <span class="flag">Relevant</span></h3>
+        <ul>
+          <li>Engine rebuild, torque-to-spec assembly</li>
+          <li>Cooling system service, OBD-II diagnostics</li>
+          <li>PC assembly and stress testing</li>
+          <li>Part swaps: HDD/SSD, RAM, GPU, PSU</li>
+        </ul>
+      </div>
+      <div class="sys" data-tracks="nuclear quantum space">
+        <h3>Safety &amp; procedure <span class="flag">Relevant</span></h3>
+        <ul>
+          <li>WHMIS certified</li>
+          <li>Radiation, laser and chemical lab safety</li>
+          <li>Electrical isolation before work</li>
+          <li>Confidential records and client data</li>
+        </ul>
+      </div>
+      <div class="sys" data-tracks="data quantum">
+        <h3>Programming <span class="flag">Relevant</span></h3>
+        <ul>
+          <li>Python: NumPy, Pandas, Matplotlib, scikit-learn</li>
+          <li>C/C++, MATLAB</li>
+          <li>Linux command line, Git and GitHub</li>
+          <li>HTML/CSS for client websites</li>
+        </ul>
+      </div>
+      <div class="sys" data-tracks="data space">
+        <h3>Data &amp; astronomy tools <span class="flag">Relevant</span></h3>
+        <ul>
+          <li>Data cleaning and exploratory analysis</li>
+          <li>Uncertainty propagation, curve fitting</li>
+          <li>DS9 and IRAF for telescope images</li>
+          <li>Excel and LaTeX for lab analysis and reports</li>
+        </ul>
+      </div>
+      <div class="sys" data-tracks="">
+        <h3>People &amp; languages</h3>
+        <ul>
+          <li>Client intake and support</li>
+          <li>Outreach and closing</li>
+          <li>English, Farsi, Dari (fluent)</li>
+          <li>Full G driver’s licence (Ontario)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FDF: résumés ================= -->
+<section id="resumes">
+  <div class="wrap">
+    <div class="head">
+      <span class="plate">FDF</span>
+      <h2>Résumés</h2>
+      <p>One page for each field, each matched to the postings I’m applying to. Pick a field in the poll above and the matching version is marked.</p>
+    </div>
+    <div class="rcards">
+      <article class="card rcard" data-tracks="nuclear">
+        <h3>Nuclear operations <span class="flag">Relevant</span></h3>
+        <p>Shift work, radiation safety, procedure discipline and hands-on mechanical work.</p>
+        <p class="roles"><span>Matched to</span>Operator in training, radiation protection, quality technician</p>
+        <div class="rcard-actions">
+          <a class="btn primary" href="./resume-nuclear.pdf" target="_blank" rel="noopener">View PDF</a>
+          <a class="btn" href="./resume-nuclear.pdf" download="Omeed_Lodin_Nuclear_Operations_Resume.pdf">Download</a>
+        </div>
+      </article>
+      <article class="card rcard" data-tracks="space">
+        <h3>Space hardware <span class="flag">Relevant</span></h3>
+        <p>Hardware assembly and testing, satellite operations and remote sensing coursework.</p>
+        <p class="roles"><span>Matched to</span>Assembly technician, satellite operations, ground station technician</p>
+        <div class="rcard-actions">
+          <a class="btn primary" href="./resume-space.pdf" target="_blank" rel="noopener">View PDF</a>
+          <a class="btn" href="./resume-space.pdf" download="Omeed_Lodin_Space_Hardware_Resume.pdf">Download</a>
+        </div>
+      </article>
+      <article class="card rcard" data-tracks="quantum">
+        <h3>Quantum & photonics labs <span class="flag">Relevant</span></h3>
+        <p>Lab setup and measurement, laser and radiation safety, uncertainty analysis.</p>
+        <p class="roles"><span>Matched to</span>Chip test technician, optical lab technician, acceptance test technician</p>
+        <div class="rcard-actions">
+          <a class="btn primary" href="./resume-quantum.pdf" target="_blank" rel="noopener">View PDF</a>
+          <a class="btn" href="./resume-quantum.pdf" download="Omeed_Lodin_Quantum_Photonics_Resume.pdf">Download</a>
+        </div>
+      </article>
+      <article class="card rcard" data-tracks="data">
+        <h3>Data & AI <span class="flag">Relevant</span></h3>
+        <p>Python and scikit-learn, statistics, and the stellar classification project.</p>
+        <p class="roles"><span>Matched to</span>Data analyst, junior machine learning, AI training and evaluation</p>
+        <div class="rcard-actions">
+          <a class="btn primary" href="./resume-data.pdf" target="_blank" rel="noopener">View PDF</a>
+          <a class="btn" href="./resume-data.pdf" download="Omeed_Lodin_Data_AI_Resume.pdf">Download</a>
+        </div>
+      </article>
+    </div>
+    <p class="rnote">Want one version for everything? <a href="./resume.pdf" target="_blank" rel="noopener">Open the general résumé</a>.</p>
+  </div>
+</section>
+
+<!-- ================= CAPCOM: contact ================= -->
+<section id="capcom">
+  <div class="wrap">
+    <div class="head">
+      <span class="plate">CAPCOM</span>
+      <h2>Get in touch</h2>
+    </div>
+    <div class="comms">
+      <div>
+        <p>If you’re hiring in one of these fields, email is the fastest way to reach me. I’m happy to send a résumé tailored to your posting.</p>
+        <div class="ctas">
+          <a class="btn primary" href="mailto:omeed_lodin@live.com">Email me</a>
+          <a class="btn" href="#resumes">Résumés</a>
+        </div>
+      </div>
+      <ul class="channels">
+        <li><span class="k">Email</span><a href="mailto:omeed_lodin@live.com">omeed_lodin@live.com</a></li>
+        <li><span class="k">Phone</span><a href="tel:+12896004349">289-600-4349</a></li>
+        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/omeed-lodin">linkedin.com/in/omeed-lodin</a></li>
+        <li><span class="k">GitHub</span><a href="https://github.com/OmeedLodin">github.com/OmeedLodin</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Omeed Lodin · Ajax, Ontario</span>
+    <span>Updated November 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var TRACKS = {
+    nuclear: {
+      name: 'Nuclear operations',
+      resume: './resume-nuclear.pdf',
+      lines: [
+        'University coursework in Statistical and Thermal Physics, Modern Physics, Electromagnetics I, and Chemical Structure and Dynamics',
+        'Handled a sealed radioactive source under radiation-safety rules in the Rutherford scattering lab',
+        'Worked night shifts six nights a week through high school, including closing, opening and shift turnover',
+        'Rebuilt an engine to service-manual procedures; isolates the battery before any electrical work',
+        'WHMIS certified and eligible for Canadian security clearance'
+      ]
+    },
+    space: {
+      name: 'Space hardware',
+      resume: './resume-space.pdf',
+      lines: [
+        'Assembled, wired and stress-tested 20+ custom PCs, with temperature checks before every handoff',
+        'Bench instruments: oscilloscope, multimeter, DC power supply, soldering iron',
+        'Analyzed CCD telescope data from York’s observatory to measure a galaxy nucleus (PGC-70419)',
+        'Coursework in Galaxies and the Universe, Optics and Spectra, and Remote Sensing of the Earth’s Surface (in progress)',
+        'Eligible for Canadian security clearance and open to relocating'
+      ]
+    },
+    quantum: {
+      name: 'Quantum & photonics labs',
+      resume: './resume-quantum.pdf',
+      lines: [
+        'Modern Physics, Optics and Spectra, and Electromagnetics I completed; Quantum Mechanics (PHYS 4010) in Winter 2027',
+        'Set up and ran Rutherford scattering, Millikan oil drop and Cavendish torsion balance experiments',
+        'Followed radiation, laser and chemical safety procedures, with a lab notebook for every run',
+        'Lab reports built on uncertainty propagation and curve fitting; analyzes data in Python with NumPy, Pandas and Matplotlib',
+        'Writes formal technical reports on method, measurements and results'
+      ]
+    },
+    data: {
+      name: 'Data & AI',
+      resume: './resume-data.pdf',
+      lines: [
+        'Python with NumPy, Pandas, Matplotlib and scikit-learn; also C/C++ and MATLAB on Linux',
+        'Building a star / galaxy / quasar classifier on SDSS DR18 survey data (in progress)',
+        'Cleaned survey data, analyzed class balance and feature correlations, built a logistic-regression baseline',
+        'Coursework in Computational Methods, Experimental Physics with Data Analysis, and Applied Linear Algebra; Practical Data Science Methods in Winter 2027',
+        'Version control with Git and GitHub'
+      ]
+    }
+  };
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var buttons = document.querySelectorAll('.track');
+  var readout = document.getElementById('readout');
+  var idleHTML = document.getElementById('idle').outerHTML;
+  var state = document.getElementById('pollState');
+  var copyBtn = document.getElementById('copyLink');
+  var clearBtn = document.getElementById('clearTrack');
+  var resumeLink = document.getElementById('trackResume');
+  var navResume = document.getElementById('navResume');
+  function setNav(t) {
+    if (t && t.resume) {
+      navResume.setAttribute('href', t.resume);
+      navResume.setAttribute('target', '_blank');
+      navResume.setAttribute('rel', 'noopener');
+      navResume.textContent = 'Résumé PDF';
+      navResume.setAttribute('title', t.name + ' résumé (PDF)');
+    } else {
+      navResume.setAttribute('href', '#resumes');
+      navResume.removeAttribute('target');
+      navResume.removeAttribute('rel');
+      navResume.textContent = 'Résumés';
+      navResume.setAttribute('title', 'All five résumés');
+    }
+  }
+  var items = document.querySelectorAll('[data-tracks]');
+  var timers = [];
+
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
+  function setURL(id) {
+    try {
+      var url = new URL(window.location.href);
+      if (id) url.searchParams.set('track', id); else url.searchParams.delete('track');
+      history.replaceState(null, '', url.toString());
+    } catch (e) {}
+  }
+
+  function mark(id) {
+    var count = 0;
+    items.forEach(function (el) {
+      var list = (el.getAttribute('data-tracks') || '').split(/\s+/);
+      var hit = !!id && list.indexOf(id) !== -1;
+      el.classList.toggle('match', hit);
+      if (hit) count++;
+      var flag = el.querySelector('.flag');
+    });
+    document.body.classList.toggle('filtered', !!id);
+    return count;
+  }
+
+  function select(id, opts) {
+    clearTimers();
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.track === id)); });
+
+    if (!id || !TRACKS[id]) {
+      readout.innerHTML = idleHTML;
+      state.textContent = 'No field selected';
+      copyBtn.hidden = true; clearBtn.hidden = true; resumeLink.hidden = true;
+      setNav(null);
+      mark(null); setURL(null);
+      return;
+    }
+
+    var t = TRACKS[id];
+    var html = '<div class="readout-title"><strong>' + t.name + '</strong><span id="pollCount">Polling…</span></div><ul class="lines">';
+    t.lines.forEach(function (line) {
+      html += '<li class="pending"><span>' + line.replace(/&/g, '&amp;') + '</span><span class="go">GO</span></li>';
+    });
+    readout.innerHTML = html + '</ul>';
+
+    var lis = readout.querySelectorAll('.lines li');
+    var countEl = document.getElementById('pollCount');
+    var instant = reduce || (opts && opts.instant);
+    lis.forEach(function (li, i) {
+      if (instant) { li.classList.remove('pending'); return; }
+      timers.push(setTimeout(function () { li.classList.remove('pending'); }, 140 + i * 170));
+    });
+    var done = function () { countEl.textContent = lis.length + ' of ' + lis.length + ' GO'; };
+    if (instant) done(); else timers.push(setTimeout(done, 140 + lis.length * 170));
+
+    var n = mark(id);
+    state.textContent = n + ' items on this page marked relevant';
+    copyBtn.hidden = false; clearBtn.hidden = false;
+    resumeLink.hidden = !t.resume;
+    if (t.resume) resumeLink.setAttribute('href', t.resume);
+    setNav(t);
+    copyBtn.textContent = 'Copy link to this view';
+    setURL(id);
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') === 'true';
+      select(on ? null : b.dataset.track);
+    });
+  });
+  clearBtn.addEventListener('click', function () { select(null); });
+  copyBtn.addEventListener('click', function () {
+    var text = window.location.href;
+    var ok = function () { copyBtn.textContent = 'Link copied'; };
+    var fail = function () { copyBtn.textContent = 'Copy failed — use the address bar'; };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fail);
+      else fail();
+    } catch (e) { fail(); }
+  });
+
+  // Restore a shared view, e.g. ?track=nuclear
+  try {
+    var initial = new URL(window.location.href).searchParams.get('track');
+    if (initial && TRACKS[initial]) select(initial, { instant: true });
+  } catch (e) {}
+
+  // Mission elapsed time since first day at York (Sept 2022) and a UTC clock
+  var launch = Date.UTC(2022, 8, 6, 13, 0, 0);
+  var metEl = document.getElementById('met');
+  var clockEl = document.getElementById('clock');
+  function pad(n, w) { n = String(n); while (n.length < (w || 2)) n = '0' + n; return n; }
+  function tick() {
+    var now = new Date();
+    var s = Math.max(0, Math.floor((now.getTime() - launch) / 1000));
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60); s -= m * 60;
+    metEl.textContent = pad(d, 4) + ':' + pad(h) + ':' + pad(m) + ':' + pad(s);
+    clockEl.textContent = 'UTC ' + pad(now.getUTCHours()) + ':' + pad(now.getUTCMinutes()) + ':' + pad(now.getUTCSeconds());
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
